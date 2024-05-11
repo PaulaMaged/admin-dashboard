@@ -1,4 +1,5 @@
 .container {
+    min-height: 100vh;
     display: grid;
     grid-template-columns: minmax(100px, 1fr) minmax(600px, 6fr);
     grid-template-rows: minmax(100px, 1fr) minmax(400px, 4fr);
@@ -11,6 +12,10 @@
 
 .side-bar {
     grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 2ch;
+    justify-content: space-between;
 }
 
 .main-content-section {
