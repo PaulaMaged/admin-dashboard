@@ -81,7 +81,12 @@ input {
         display: grid;
         grid-template: auto auto / auto auto;
         padding-bottom: 2ch;
-        gap: 1ch;
+        gap: 0 1ch;
+
+        .mini-greeting {
+            font-size: 12px;
+            align-self: end;
+        }
 
         .profile-image {
             grid-row: 1 / span 2;
