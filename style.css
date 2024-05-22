@@ -30,9 +30,10 @@ input {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: min-content min-content;
-    gap: 15px;
+    gap: 5px;
     padding: 0 6ch 0 3ch;
     align-items: center;
+    padding-top: 1ch;
 
     .search , .user-info {
         justify-self: start;
@@ -48,6 +49,16 @@ input {
 
     .user-info-mini, .buttons-container {
         justify-self: center;
+        align-items: center;
+    }
+
+    .user-info-mini > *{
+        margin-left: 1ch;
+    }
+
+    .mini-user-name {
+        display: inline-block;
+        vertical-align:super;
     }
 
     .buttons-container {
@@ -135,18 +146,61 @@ input {
 
 
 .main-content-section {
+
     background-color: #e3e2e2;
     display: grid;
     grid-template-columns: minmax(600px, 6fr) minmax(200px, 3fr);
     grid-template-rows: minmax(25px, 30px) minmax(100px, 1fr);
-    gap: 1ch;
-    padding: 2ch;
+    gap: 1ch 3ch;
+    padding: 1ch 3ch ;
     font-size: 12px;
 
     .projects {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1ch;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3ch;
+
+        .card {
+            overflow: hidden;
+            border-radius: 5px;
+            background-color: white;
+            display: grid;
+            grid-template: auto auto / minmax(auto, 50) auto auto;
+            gap: 1ch 3ch;
+            padding-right: 2ch;
+
+            .color-strip {
+                grid-row: 1 / span 3;
+                width: 5px;
+                background-color: orange;
+            }
+
+            .icons {
+                margin-right: 1ch;
+                grid-row: 3;
+                display: grid;
+                grid-auto-flow: column;
+                justify-content: end;
+                gap: 1ch;
+                grid-template-rows: 25px;
+                /* height: 25px; */
+
+                img {
+                    width: 20px;
+                }
+            }
+
+            .card-header {
+                padding-top: 2ch;
+                grid-row: 1;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .card-description {
+                grid-row: 2;
+            }
+        }
     }
 
     .announcements-plus-trending {
@@ -164,7 +218,6 @@ input {
             .announcements, .trending-accounts {
                 background-color: white;
                 padding: 1rem;
-                /* overflow: auto; */
             }
         }
     }
